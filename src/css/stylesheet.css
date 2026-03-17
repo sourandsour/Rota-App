@@ -1,0 +1,12 @@
+#login-screen{
+    display: none;
+}
+
+#manager-dashboard{
+    display: none;
+}
+
+#employee-dashboard{
+    display: block;
+}
+
