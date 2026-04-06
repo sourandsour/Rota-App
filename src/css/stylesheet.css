@@ -1,5 +1,5 @@
 #login-screen{
-    display: none;
+    display: block;
 }
 
 #manager-dashboard{
@@ -7,6 +7,6 @@
 }
 
 #employee-dashboard{
-    display: block;
+    display: none;
 }
 

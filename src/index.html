@@ -15,17 +15,27 @@
             <svg></svg>
             <h1>Staff Roster</h1>
             <h2>Select your account to continue</h2>
-            <form>
-                <label for="username">Select User:</label>
-                <select id="username" name="username">
-                    <option value="manager">Manager</option>
-                    <option value="employee">Employee</option>
-                </select>
-                <button type="submit">Login</button>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="enter your username">
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="enter your password"> 
+
+                
+                <button type="submit" id="login-button">Login</button>
             </form>
 
             <article>
-                <h2>The above are demo accounts, select one</h2>
+                <h2>use one of the demo accounts</h2>
+                <ul>
+                    <li>Manager: username = manager1, password = manager_pass1</li>
+                    <li>Employee: username = john_doe, password = john_pass123</li>
+                    <li>Employee: username = emma_smith, password = emma_secure1</li>
+                    <li>Employee: username = liam_jones, password = liam_pw456</li>
+                    <li>Employee: username = olivia_brown, password = olivia_pw789</li>
+                    <li>Employee: username = noah_davis, password = noah_pw321</li>
+                </ul>
             </article>
         </section>
 
@@ -227,5 +237,6 @@
 
 
     </main>
+    <script src="js/app.js"></script>
 </body>
 </html>
