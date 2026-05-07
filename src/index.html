@@ -12,174 +12,140 @@
 
         <!-- State 1 : Log In Screen -->
         <section id="login-screen">
-            <svg></svg>
-            <h1>Staff Roster</h1>
-            <h2>Select your account to continue</h2>
-            <form id="login-form">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="enter your username">
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="enter your password"> 
+            <div id="login-box">
+                <img src="assets/Login-png.png" alt="Rota App Logo" id="login-logo">
+                <h1>Rota App</h1>
+                <form id="login-form">
+                    <input type="text" id="username" name="username" placeholder="username">
+                    <input type="password" id="password" name="password" placeholder="password"> 
+                    <button type="submit" id="login-button">Login</button>
+                </form>
 
-                
-                <button type="submit" id="login-button">Login</button>
-            </form>
-
-            <article>
-                <h2>use one of the demo accounts</h2>
-                <ul>
-                    <li>Manager: username = manager1, password = manager_pass1</li>
-                    <li>Employee: username = john_doe, password = john_pass123</li>
-                    <li>Employee: username = emma_smith, password = emma_secure1</li>
-                    <li>Employee: username = liam_jones, password = liam_pw456</li>
-                    <li>Employee: username = olivia_brown, password = olivia_pw789</li>
-                    <li>Employee: username = noah_davis, password = noah_pw321</li>
-                </ul>
-            </article>
+                <article id="demo-accounts">
+                    <h2>use one of the demo accounts</h2>
+                    <ul>
+                        <li>Manager: username = manager1, password = pass1</li>
+                        <li>Employee: username = john_doe, password = pass1</li>
+                        <li>Employee: username = emma_smith, password = emma_secure1</li>
+                    </ul>
+                </article>
+            </div>
         </section>
 
 
         <!-- State 2 : Dashboard Screen Manager View-->
         <section id="manager-dashboard">
-            <h1>Manager Dashboard</h1>
-            <p>Welcome, Manager User</p>
-
-            <nav>
+            <article id="manager-header">
+                <h1>Manager Dashboard</h1>
+                <h2 id="manager-header-greeting">Welcome, Manager!</h2>
+            </article>
+        
+            <nav id="manager-nav">
                 <ul>
                     <li><a href="#schedule">Schedule</a></li>
                     <li><a href="#staff-availability">Staff Availability</a></li>
                     <li><a href="#change-requests">Change Requests</a></li>
-                    <li><a href="#logout">Logout</a></li>
+                    <li><button id="manager-logout">Logout</button></li>
                 </ul>
             </nav>
 
-
-            <div id="schedule-view">
-                <article>
-                    <button id="toggle-daily">Daily</button>
-                    <button id="toggle-weekly">Weekly</button>
-
+            <article id="date-selection">
                     <label for="schedule-date">Select Date:</label>
                     <input type="date" id="schedule-date" name="schedule-date" >
 
                     <button id="auto-allocate">Auto Allocate</button>
+            </article>
 
-                </article>
-
-                <article>
-                    <h2>Shifts for</h2>
-                    <h2 id="schedule-title-date">date</h2>
+            <div id="schedule-view">
+                <h1 id="schedule-title">Schedule</h1>
+                <article id="schedule-block">
+                    <div id="schedule-header">
+                        <h2>Schedule for:</h2>
+                        <h2 id="schedule-title-date">date</h2>
+                    </div>
                     
-                    <article class="shift-block">
-                        <h2>Morning Shift</h2>
-                        <p>8:00 AM - 1:00 PM</p>
-                        <p id="shift-status">Assigned</p>
+                    <div class="schedule">
+                        <!-- Top row -->
+                        <div id="cell-headers">
+                            <div class="cell-header"></div>
+                            <div class="cell-header">Mon</div>
+                            <div class="cell-header">Tue</div>
+                            <div class="cell-header">Wed</div>
+                            <div class="cell-header">Thu</div>
+                            <div class="cell-header">Fri</div>
+                            <div class="cell-header">Sat</div>
+                            <div class="cell-header">Sun</div>
+                        </div>
                         
-                        <form type="dropdown" id="morning-shift" name="morning-shift">
-                            <label for="morning-staff">Assign Staff:</label>
-                            <select id="morning-staff" name="morning-staff">
-                                <option value="employee1">Employee 1</option>
-                                <option value="employee2">Employee 2</option>
-                                <option value="employee3">Employee 3</option>
-                            </select>
-                        </form>
 
-                        <h3>Assigned Staff:</h3>
-                        <p id="morning-staff-display">No staff assigned</p>
-                    </article>
-
-                    <article class="shift-block">
-                        <h2>Afternoon Shift</h2>
-                        <p>8:00 AM - 1:00 PM</p>
-                        <p id="shift-status">Assigned</p>
+                        <!-- Morning -->
+                        <div id="morning-row">
+                            <div class="cell-time-label">Morning<br>(08:00–12:00)</div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                        </div>
                         
-                        <form type="dropdown" id="afternoon-shift" name="afternoon-shift">
-                            <label for="afternoon-staff">Assign Staff:</label>
-                            <select id="afternoon-staff" name="afternoon-staff">
-                                <option value="employee1">Employee 1</option>
-                                <option value="employee2">Employee 2</option>
-                                <option value="employee3">Employee 3</option>
-                            </select>
-                        </form>
 
-                        <h3>Assigned Staff:</h3>
-                        <p id="afternoon-staff-display">No staff assigned</p>
-                    </article>
-
-                    <article class="shift-block">
-                        <h2>Evening Shift</h2>
-                        <p>8:00 AM - 1:00 PM</p>
-                        <p id="shift-status">Assigned</p>
+                        <!-- Afternoon -->
+                        <div id="afternoon-row">
+                            <div class="cell-time-label">Afternoon<br>(12:00–17:00)</div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                        </div>
                         
-                        <form type="dropdown" id="evening-shift" name="evening-shift">
-                            <label for="evening-staff">Assign Staff:</label>
-                            <select id="evening-staff" name="evening-staff">
-                                <option value="employee1">Employee 1</option>
-                                <option value="employee2">Employee 2</option>
-                                <option value="employee3">Employee 3</option>
-                            </select>
-                        </form>
 
-                        <h3>Assigned Staff:</h3>
-                        <p id="evening-staff-display">No staff assigned</p>
-                    </article>
-
+                        <!-- Evening -->
+                        <div id="evening-row">
+                            <div class="cell-time-label">Evening<br>(17:00–22:00)</div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                            <div class="cell"><select></select></div>
+                        </div>
+                        
+                    </div>
+                    
                 </article>
-
             </div>
-
 
             <div id="staff-availability">
-                <label for="availability-date-selector">Select Date:</label>
-                <input type="date" id="availability-date-selector" name="availability-date-selector" >
-
                 <h2>Staff Availability</h2>
-                <h2 id="availability-date">date</h2>
-                
-                <article class="availability-block">
-                    <h2>Employee 1</h2>
-                    <p id="employee-1-availability-status">Available</p>
-                    <p id="employee-1-availability-preferences">Prefers: Morning Shift</p>
-                </article>
-
-                <article class="availability-block">
-                    <h2>Employee 1</h2>
-                    <p id="employee-2-availability-status">Available</p>
-                    <p id="employee-2-availability-preferences">Prefers: Morning Shift</p>
-                </article>
-
-                <article class="availability-block">
-                    <h2>Employee 1</h2>
-                    <p id="employee-3-availability-status">Available</p>
-                    <p id="employee-3-availability-preferences">Prefers: Morning Shift</p>
-                </article>
-
+                <div id="manager-availability-grid"></div>
             </div>
             
+    
             <div id="change-requests">
                 <h2>Change Requests</h2>
-                <article class="change-request-block">
-                    <h3>Employee 1</h3>
-                    <p>Requesting change for Morning Shift on 2024-06-01</p>
-                    <button class="approve-request">Approve</button>
-                    <button class="deny-request">Deny</button>
-                </article>
-
-                <article class="change-request-block">
-                    <h3>Employee 2</h3>
-                    <p>Requesting change for Afternoon Shift on 2024-06-02</p>
-                    <button class="approve-request">Approve</button>
-                    <button class="deny-request">Deny</button>
-                </article>
-
-                <article class="change-request-block">
-                    <h3>Employee 3</h3>
-                    <p>Requesting change for Evening Shift on 2024-06-03</p>
-                    <button class="approve-request">Approve</button>
-                    <button class="deny-request">Deny</button>
-                </article>
-
+                <div id="shift-requests-section">
+                    <p>Pending Shift Change Requests</p>
+                    <table id="shift-requests-table">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Shift Date</th>
+                                <th>Shift Type</th>
+                                <th>Request Type</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            
+                        </tbody>
+                    </table>
+                </div>           
 
             </div>
 
@@ -188,55 +154,68 @@
 
         <!-- State 3 : Dashboard Screen Employee View-->
         <section id="employee-dashboard">
-            <h1>Welcome, </h1>
-            <h1 id="employee-header-greeting">Name</h1>
-            <p>Staff Dashboard</p>
-            <a href="#logout">Logout</a>
+            <div id="employee-header">
+                <h1>Staff Dashboard</h1>
+                
+                
+                <button id="employee-logout">Logout</button>
+            </div>
 
-            <article id="employee-schedule-block">
-                <article class="shift-block">
-                    <h2 id="example-id">Example Shift</h2>
-                    <h3 class="assignment-status">Assigned</h3>
-                    <h3 id="example-time-of-day">Morning</h3>
-                    <p id="example-shift-time">9:00 AM - 5:00 PM</p>
-                    <button class="request-change">Request Change</button>
-                </article>
+            <article id="employee-weekly-schedule">
+                <h2>My Weekly Schedule</h2>
+                <div id="employee-schedule-grid"></div>
 
                 
             </article>
 
             <article id="employee-availability-block">
-                    <h2>My Availability</h2>
-                    <button id="add-availability">Add Availability</button>
+                <h2>My Availability</h2>
+                <p>Select unavailable days</p>
+                <button id="save-availability">Save</button>
+                <button id="add-availability">Add Availability</button>
 
-                    <article class="availability-block">
-                        <h3 id="example-date-availability">Date</h3>
-                        <p class="available-shift-status"> Available</p>
-                        <p class="example-availability-preference">Morning Shift Preferred</p>
-                    </article>                 
+                <div id="availability-list"> </div>                 
     
             </article>
 
             <article id="employee-change-request-block">
-                    <h2>My Change Requests</h2>
+                <h2>My Change Requests</h2>
+                <form id="shift-request-form">
+                    <label for="shift-date">Shift Date:</label>
+                    <input type="date" id="shift-date" required><br><br>
 
-                    <article class="change-request-block">
-                        <h3 id="example-change-request-shift-old">Shift to be changed</h3>
-                        <h3 id="example-change-request-shift-new">Shift to be changed to</h3>                        
-                        <p class="change-request-status">Status: Pending</p>
-                    </article>
+                    <label for="shift-type">Shift Type:</label>
+                    <select id="shift-type" required>
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternoon</option>
+                        <option value="evening">Evening</option>
+                    </select><br><br>
+
+                    <label for="request-type">Request Type:</label>
+                    <select id="request-type" required>
+                        <option value="swap">Swap</option>
+                        <option value="time-off">Time-Off</option>
+                    </select><br><br>
+
+                    <button type="submit">Submit Request</button>
+                </form>
+                <table id="employee-requests-table">
+                    <thead>
+                        <tr>
+                            <th>Shift Date</th>
+                            <th>Shift Type</th>
+                            <th>Request Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>               
             </article>
         </section>
 
-
-        
-
-
-
-
-
-
     </main>
-    <script src="js/app.js"></script>
+    <script src="js/app.js" defer></script>
 </body>
 </html>
